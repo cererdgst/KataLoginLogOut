@@ -18,7 +18,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun onLogin(user: String, password: String) {
 
-        if("admin" == user && "admin" == password){
+        val kataApp = KataApp()
+
+        if(kataApp.onLogin(user,password)){
             et_user.setText("")
             et_pass.setText("")
             btn_login.text = getString(R.string.logout)
